@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        handleUserName()
+
         binding.buttonNewWord.setOnClickListener(this)
 
     }
@@ -25,5 +27,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (view.id == R.id.button_new_word) {
             TODO("")
         }
+    }
+
+    private fun handleUserName() {
+        val userName = SecurityPreferences(this).getString("USER_NAME")
+        binding.textHello.text = "Olá, $userName!"
     }
 }

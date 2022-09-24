@@ -1,6 +1,8 @@
 package com.thiaagodev.motivation
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -32,6 +34,9 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
 
 
         if (name != "") {
+
+            SecurityPreferences(this).storeString("USER_NAME", name)
+
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         } else {
