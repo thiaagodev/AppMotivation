@@ -3,4 +3,7 @@
     <string name="new_word">Nova Frase</string>
     <string name="default_word">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
     <string name="hello">Olá, Kotlin!</string>
+    <string name="save">Salvar</string>
+    <string name="your_name">Qual seu nome?</string>
+    <string name="lets_start">Vamos começar?</string>
 </resources>
