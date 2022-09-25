@@ -21,6 +21,8 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
 
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         binding.buttonSaveName.setOnClickListener(this)
 
     }
