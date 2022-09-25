@@ -1,4 +1,4 @@
-package com.thiaagodev.motivation
+package com.thiaagodev.motivation.infra
 
 import android.content.Context
 import android.content.SharedPreferences

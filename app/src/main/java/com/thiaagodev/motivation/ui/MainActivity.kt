@@ -1,10 +1,11 @@
-package com.thiaagodev.motivation
+package com.thiaagodev.motivation.ui
 
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
+import com.thiaagodev.motivation.infra.MotivationConstants
+import com.thiaagodev.motivation.R
+import com.thiaagodev.motivation.infra.SecurityPreferences
 import com.thiaagodev.motivation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun handleUserName() {
-        val userName = SecurityPreferences(this).getString("USER_NAME")
+        val userName = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
         binding.textHello.text = "Olá, $userName!"
     }
 }
