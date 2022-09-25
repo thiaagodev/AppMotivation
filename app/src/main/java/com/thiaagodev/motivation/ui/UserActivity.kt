@@ -23,21 +23,11 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.buttonSaveName.setOnClickListener(this)
 
-        verifyUserName()
     }
 
     override fun onClick(view: View) {
         if (view.id == R.id.button_save_name) {
             handleSave()
-        }
-    }
-
-    private fun verifyUserName() {
-        val userName = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
-
-        if(userName != "") {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
         }
     }
 
@@ -49,7 +39,6 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
 
             SecurityPreferences(this).storeString(MotivationConstants.KEY.USER_NAME, name)
 
-            startActivity(Intent(this, MainActivity::class.java))
             finish()
         } else {
             Toast.makeText(this, R.string.validation_mandatory_name, Toast.LENGTH_SHORT).show()

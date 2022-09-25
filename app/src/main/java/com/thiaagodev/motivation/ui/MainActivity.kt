@@ -1,5 +1,6 @@
 package com.thiaagodev.motivation.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,13 +23,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        handleUserName()
+
         handlePhrase()
 
-        binding.buttonNewWord.setOnClickListener(this)
-        binding.imageAllInclusive.setOnClickListener(this)
-        binding.imageHappy.setOnClickListener(this)
-        binding.imageSunny.setOnClickListener(this)
+        setListeners()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        showUserName()
     }
 
     override fun onClick(view: View) {
@@ -39,7 +42,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             in listOf(R.id.image_all_inclusive, R.id.image_happy, R.id.image_sunny) -> {
                 handleFilter(view.id)
             }
+            R.id.text_hello -> {
+                startActivity(Intent(this, UserActivity::class.java))
+            }
         }
+    }
+
+    private fun setListeners() {
+        binding.buttonNewWord.setOnClickListener(this)
+        binding.imageAllInclusive.setOnClickListener(this)
+        binding.imageHappy.setOnClickListener(this)
+        binding.imageSunny.setOnClickListener(this)
+        binding.textHello.setOnClickListener(this)
     }
 
     private fun handlePhrase() {
@@ -67,7 +81,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun handleUserName() {
+    private fun showUserName() {
         val userName = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
         binding.textHello.text = "Olá, $userName!"
     }
