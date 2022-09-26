@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Motivation</string>
+    <string name="new_word">New phrase</string>
+    <string name="default_word">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
+    <string name="hello">Hello</string>
+    <string name="save">Save</string>
+    <string name="your_name">What\'s your name?</string>
+    <string name="lets_start">Let\'s get started?</string>
+
+    <string name="validation_mandatory_name">Inform your name</string>
+</resources>

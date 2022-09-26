@@ -1,6 +1,7 @@
 package com.thiaagodev.motivation.ui
 
 import android.content.Intent
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -84,6 +85,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun showUserName() {
         val userName = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
-        binding.textHello.text = "Olá, $userName!"
+        binding.textHello.text = "${applicationContext.getString(R.string.hello)}, $userName!"
     }
 }
