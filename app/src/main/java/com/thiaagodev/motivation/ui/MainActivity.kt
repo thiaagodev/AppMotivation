@@ -85,6 +85,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun showUserName() {
         val userName = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
-        binding.textHello.text = "${applicationContext.getString(R.string.hello)}, $userName!"
+        binding.textHello.text = "${getString(R.string.hello)}, $userName!"
     }
 }
